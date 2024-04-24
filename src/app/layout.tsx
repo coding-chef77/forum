@@ -39,9 +39,9 @@ function TopNav() {
       <div>NullKarbo</div>
       <div>
         <SignedOut>
-          <div className="transform rounded-lg bg-green-500 p-2 text-black shadow-md transition-all duration-200 ease-in-out hover:scale-105 hover:bg-green-600 hover:shadow-lg">
+          <StyledButton>
             <SignInButton>Logg Inn</SignInButton>
-          </div>
+          </StyledButton>
         </SignedOut>
         <SignedIn>
           <div className="flex gap-4">
