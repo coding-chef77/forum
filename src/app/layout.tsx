@@ -40,7 +40,7 @@ function TopNav() {
       <div>
         <SignedOut>
           <StyledButton>
-            <SignInButton> Logg Inn</SignInButton>
+            <SignInButton>Logg Inn</SignInButton>
           </StyledButton>
         </SignedOut>
         <SignedIn>
