@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Null Karbo",
-  description: "Alt om animalk kosthold",
+  title: "Forum",
+  description: "Alt om forum for alle",
   icons: {
     icon: "/favicon.ico",
     url: "/favicon",
@@ -27,7 +27,7 @@ export const metadata = {
 function TopNav() {
   return (
     <nav className="fixed left-0 right-0 top-0 z-10 flex  w-full items-center justify-between border-b border-gray-300 p-4 text-xl font-semibold">
-      <div>NullKarbo</div>
+      <div>Forum</div>
       <div>
         <SignedOut>
           <StyledButton>
