@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { Button } from "~/components/ui/button";
+import StyledButton from "~/components/StyledButton";
 import { Textarea } from "~/components/ui/textarea";
 import { Card, CardTitle, CardHeader, CardContent } from "~/components/ui/card";
 
@@ -36,30 +36,43 @@ const PostForm = () => {
     },
   });
 
-  // Corrected form submission handling
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
     console.log(data); // Handle the form data
   };
 
   return (
-    <Card className="w-full max-w-md p-6">
-      <CardHeader>
-        <CardTitle>Opprett en post</CardTitle>
+    <Card className="w-full max-w-md border border-gray-300 p-6 shadow-lg">
+      {" "}
+      {/* Added border and shadow for visual separation */}
+      <CardHeader className="text-center">
+        {" "}
+        {/* Centered Card Header */}
+        <CardTitle className="text-2xl font-semibold">
+          Opprett en post
+        </CardTitle>{" "}
+        {/* Improved font styling */}
       </CardHeader>
-      <CardContent>
+      <CardContent className="space-y-4">
+        {" "}
+        {/* Added spacing between elements */}
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-6"
           >
             <FormField
               control={form.control}
               name="tittel"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Tittel</FormLabel>
+                  <FormLabel className="text-gray-700">Tittel</FormLabel>
                   <FormControl>
-                    <Input placeholder="Tittel" type="text" {...field} />
+                    <Input
+                      placeholder="Tittel"
+                      type="text"
+                      {...field}
+                      className="rounded-lg border-gray-300"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -70,15 +83,19 @@ const PostForm = () => {
               name="innhold"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Innhold</FormLabel>
+                  <FormLabel className="text-gray-700">Innhold</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Skriv ditt innlegg her" {...field} />
+                    <Textarea
+                      placeholder="Skriv ditt innlegg her"
+                      {...field}
+                      className="rounded-lg border-gray-300"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">Send</Button> {/* Form submission button */}
+            <StyledButton type="submit">Send</StyledButton>
           </form>
         </Form>
       </CardContent>
