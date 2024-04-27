@@ -1,3 +1,5 @@
+"use client";
+
 import { Button as BaseButton } from "~/components/ui/button";
 
 export default function StyledButton({ ...props }) {
